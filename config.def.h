@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 	{ MOD, XK_j,     ACTION##stack, {.i = INC(+1) } }, \
 	{ MOD, XK_k,     ACTION##stack, {.i = INC(-1) } }, \
 	{ MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
-	{ MOD, XK_q,     ACTION##stack, {.i = 0 } }, \
+  { MOD, XK_q,     ACTION##stack, {.i = 0 } }, \
 	{ MOD, XK_a,     ACTION##stack, {.i = 1 } }, \
 	{ MOD, XK_z,     ACTION##stack, {.i = 2 } }, \
 	{ MOD, XK_x,     ACTION##stack, {.i = -1 } },
@@ -123,8 +123,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ Mod4Mask,                     XK_comma,  shiftview,         {.i = -1 } },
-	{ Mod4Mask,                     XK_period, shiftview,         {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_comma,  shiftview,      {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, shiftview,      {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
