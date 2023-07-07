@@ -48,7 +48,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
-static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
@@ -155,10 +155,13 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 
-	{ MODKEY|ControlMask,           XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ControlMask,           XK_s,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ControlMask,           XK_d,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ControlMask,           XK_t,      setlayout,      {.v = &layouts[0]}  },
+	{ MODKEY|ControlMask,           XK_m,      setlayout,      {.v = &layouts[1]}  },
+	{ MODKEY|ControlMask,           XK_s,      setlayout,      {.v = &layouts[2]}  },
+	{ MODKEY|ControlMask,           XK_d,      setlayout,      {.v = &layouts[3]}  },
+	{ MODKEY|ControlMask,           XK_h,      setlayout,      {.v = &layouts[4]}  },
+  { MODKEY|ControlMask,           XK_b,      setlayout,      {.v = &layouts[5]}  },
+	{ MODKEY|ControlMask,           XK_c,      setlayout,      {.v = &layouts[11]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ Mod4Mask,                     XK_s,      togglesticky,   {0} },
