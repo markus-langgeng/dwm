@@ -82,13 +82,14 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+/* r-n-v in dvorak is top-middle-bottom*/
 #define STACKKEYS(MOD,ACTION) \
-	{ MOD, XK_j,     ACTION##stack, {.i = INC(+1) } }, \
-	{ MOD, XK_k,     ACTION##stack, {.i = INC(-1) } }, \
+	{ MOD, XK_s,     ACTION##stack, {.i = INC(+1) } }, \
+	{ MOD, XK_h,     ACTION##stack, {.i = INC(-1) } }, \
 	{ MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
-  { MOD, XK_q,     ACTION##stack, {.i = 0 } }, \
-	{ MOD, XK_a,     ACTION##stack, {.i = 1 } }, \
-	{ MOD, XK_z,     ACTION##stack, {.i = 2 } }, \
+  { MOD, XK_r,     ACTION##stack, {.i = 0 } }, \
+	{ MOD, XK_n,     ACTION##stack, {.i = 1 } }, \
+	{ MOD, XK_v,     ACTION##stack, {.i = 2 } }, \
 	{ MOD, XK_x,     ACTION##stack, {.i = -1 } },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -129,8 +130,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY|ShiftMask,             XK_b,      toggleborder,   {0} },
-	STACKKEYS(MODKEY,                          focus)
-	STACKKEYS(MODKEY|ShiftMask,                push)
+	STACKKEYS(Mod4Mask,                          focus)
+	STACKKEYS(Mod4Mask|ShiftMask,                push)
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
