@@ -127,7 +127,7 @@ ResourcePref resources[] = {
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ Mod1Mask|ShiftMask,           XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY|ShiftMask,             XK_b,      toggleborder,   {0} },
 	STACKKEYS(MODKEY,                          focus)
@@ -157,17 +157,17 @@ static const Key keys[] = {
 	// { MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	// { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ Mod1Mask,                     XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ Mod1Mask|ShiftMask,           XK_c,      killclient,     {0} },
 
-	{ MODKEY|ShiftMask,           XK_t,      setlayout,      {.v = &layouts[0]}  },
-	{ MODKEY|ShiftMask,           XK_m,      setlayout,      {.v = &layouts[1]}  },
-	{ MODKEY|ShiftMask,           XK_s,      setlayout,      {.v = &layouts[2]}  },
-	{ MODKEY|ShiftMask,           XK_d,      setlayout,      {.v = &layouts[3]}  },
-	{ MODKEY|ShiftMask,           XK_h,      setlayout,      {.v = &layouts[4]}  },
-  { MODKEY|ShiftMask,           XK_b,      setlayout,      {.v = &layouts[5]}  },
-	{ MODKEY|ShiftMask,           XK_c,      setlayout,      {.v = &layouts[11]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]}  },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[1]}  },
+	{ MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[2]}  },
+	{ MODKEY|ShiftMask,             XK_d,      setlayout,      {.v = &layouts[3]}  },
+	{ MODKEY|ShiftMask,             XK_h,      setlayout,      {.v = &layouts[4]}  },
+  { MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[5]}  },
+	{ MODKEY|ShiftMask,             XK_c,      setlayout,      {.v = &layouts[11]} },
+	{ Mod1Mask,                     XK_space,  setlayout,      {0} },
+	{ Mod1Mask|ShiftMask,           XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 
 	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 10y 0w 0h" } },
