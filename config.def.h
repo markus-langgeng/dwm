@@ -129,7 +129,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ Mod1Mask|ShiftMask,           XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-  { MODKEY|ShiftMask,             XK_b,      toggleborder,   {0} },
+  { MODKEY|ControlMask,           XK_b,      toggleborder,   {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -165,6 +165,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_d,      setlayout,      {.v = &layouts[3]}  },
 	{ MODKEY|ShiftMask,             XK_h,      setlayout,      {.v = &layouts[4]}  },
   { MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[5]}  },
+  { MODKEY|ShiftMask,             XK_g,      setlayout,      {.v = &layouts[7]}  },
 	{ MODKEY|ShiftMask,             XK_c,      setlayout,      {.v = &layouts[11]} },
 	{ Mod1Mask,                     XK_space,  setlayout,      {0} },
 	{ Mod1Mask|ShiftMask,           XK_space,  togglefloating, {0} },
