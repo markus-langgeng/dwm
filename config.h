@@ -84,8 +84,8 @@ static const Layout layouts[] = {
 	{ Mod1Mask|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 /* r-n-v in dvorak is top-middle-bottom*/
 #define STACKKEYS(MOD,ACTION) \
-	{ MOD, XK_t,     ACTION##stack, {.i = INC(+1) } }, \
-	{ MOD, XK_h,     ACTION##stack, {.i = INC(-1) } }, \
+	{ MOD, XK_k,     ACTION##stack, {.i = INC(+1) } }, \
+	{ MOD, XK_j,     ACTION##stack, {.i = INC(-1) } }, \
 	{ MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \
   { MOD, XK_r,     ACTION##stack, {.i = 0 } }, \
 	{ MOD, XK_n,     ACTION##stack, {.i = 1 } }, \
@@ -131,7 +131,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY|ControlMask,           XK_b,      toggleborder,   {0} },
 	STACKKEYS(MODKEY,                          focus)
-	STACKKEYS(MODKEY|ShiftMask,                push)
+	STACKKEYS(MODKEY|ControlMask,              push)
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	// { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -154,8 +154,8 @@ static const Key keys[] = {
 	// { MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
 	// { MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
 	// { MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	// { MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	// { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|ControlMask,           XK_g,  togglegaps,     {0} },
+	// { MODKEY|ShiftMask,             XK_0,      defaultgaps,    {0} },
 	{ Mod1Mask,                     XK_Tab,    view,           {0} },
 	{ Mod1Mask|ShiftMask,           XK_c,      killclient,     {0} },
 
