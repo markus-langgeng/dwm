@@ -6,9 +6,14 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:size=10:antialias=true:autohint=true";
-static char dmenufont[]       = "monospace:size=10:antialias=true:autohint=true";
-static const char *fonts[]          = { font };
+static char font[]            = "monospace:pixelsize=13:antialias=true:autohint=true";
+static char dmenufont[]       = "monospace:pixelsize=13:antialias=true:autohint=true";
+static const char *fonts[]          = {
+  font,
+  "Symbols Nerd Font:pixelsize=14:antialias=true:autohint=true",
+  "Noto Color Emoji:pixelsize=12:antialias=true:autohint=true",
+  "Noto Sans CJK JP:pixelsize=13:antialias=true:autohint=true",
+};
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -29,14 +34,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class              instance    title                 tags mask     isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",             NULL,       NULL,                 1 << 3,       0,            0,           1,        -1 },
-	{ "krita",            NULL,       NULL,                 1 << 3,       0,            0,           1,        -1 },
-	{ "kdenlive",         NULL,       NULL,                 1 << 4,       0,            0,           1,        -1 },
-  { "Mullvad Browser",  NULL,       NULL,                 3 << 1,       0,            0,           0,        -1 },
-	{ "firefox",          NULL,       NULL,                 1 << 2,       0,            0,           0,        -1 },
-	{ NULL,               NULL,       "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
-	{ "St",               NULL,       NULL,                 0,            0,            1,           0,        -1 },
+	/* class              instance      title                 tags mask     isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",             NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
+	{ "krita",            NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
+	{ "kdenlive",         NULL,         NULL,                 1 << 4,       0,            0,           1,        -1 },
+  { "Mullvad Browser",  NULL,         NULL,                 3 << 1,       0,            0,           0,        -1 },
+	{ "firefox",          NULL,         NULL,                 1 << 2,       0,            0,           0,        -1 },
+	{ NULL,               NULL,         "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
+	{ "St",               NULL,         NULL,                 0,            0,            1,           0,        -1 },
+	{ "St",               "float-term", NULL,                 0,            1,            1,           0,        -1 },
 };
 
 /* layout(s) */
