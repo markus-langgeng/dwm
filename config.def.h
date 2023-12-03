@@ -41,15 +41,14 @@ static const Rule rules[] = {
   { "Mullvad Browser",  NULL,         NULL,                 3 << 1,       0,            0,           0,        -1 },
 	{ "firefox",          NULL,         NULL,                 1 << 1,       0,            0,           0,        -1 },
 	{ NULL,               NULL,         "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
-	{ St,                 NULL,         NULL,                 0,            0,            1,           0,        -1 },
-	{ St,                 "float-term", NULL,                 0,            1,            0,           0,        -1 },
+	{ "St",               NULL,         NULL,                 0,            0,            1,           0,        -1 },
+	{ "St",               "float-term", NULL,                 0,            1,            0,           0,        -1 },
 };
 
 /* layout(s) */
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -113,7 +112,9 @@ static const Key keys[] = {
 	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	// { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating,    {0} },
+	{ MODKEY,                       XK_f,      togglefullscreen,  {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefakefullscreen, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
