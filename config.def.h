@@ -6,8 +6,8 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "monospace:pixelsize=13:antialias=true:autohint=true";
-static char dmenufont[]       = "monospace:pixelsize=13:antialias=true:autohint=true";
+static char font[]            = "mono:pixelsize=13:antialias=true:autohint=true";
+static char dmenufont[]       = "mono:pixelsize=13:antialias=true:autohint=true";
 static const char *fonts[]          = {
   font,
   "Symbols Nerd Font:pixelsize=14:antialias=true:autohint=true",
@@ -39,10 +39,10 @@ static const Rule rules[] = {
 	{ "krita",            NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
 	{ "kdenlive",         NULL,         NULL,                 1 << 4,       0,            0,           1,        -1 },
   { "Mullvad Browser",  NULL,         NULL,                 3 << 1,       0,            0,           0,        -1 },
-	{ "firefox",          NULL,         NULL,                 1 << 2,       0,            0,           0,        -1 },
+	{ "firefox",          NULL,         NULL,                 1 << 1,       0,            0,           0,        -1 },
 	{ NULL,               NULL,         "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
-	{ "st-256color",      NULL,         NULL,                 0,            0,            1,           0,        -1 },
-	{ "st-256color",      "float-term", NULL,                 0,            1,            0,           0,        -1 },
+	{ St,                 NULL,         NULL,                 0,            0,            1,           0,        -1 },
+	{ St,                 "float-term", NULL,                 0,            1,            0,           0,        -1 },
 };
 
 /* layout(s) */
