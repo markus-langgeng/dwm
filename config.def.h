@@ -38,11 +38,11 @@ static const Rule rules[] = {
 	{ "Gimp",             NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
 	{ "krita",            NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
 	{ "kdenlive",         NULL,         NULL,                 1 << 4,       0,            0,           1,        -1 },
-  { "Mullvad Browser",  NULL,         NULL,                 3 << 1,       0,            0,           0,        -1 },
+  { "Mullvad Browser",  NULL,         NULL,                 1 << 2,       0,            0,           0,        -1 },
 	{ "firefox",          NULL,         NULL,                 1 << 1,       0,            0,           0,        -1 },
 	{ NULL,               NULL,         "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
 	{ "St",               NULL,         NULL,                 0,            0,            1,           0,        -1 },
-	{ "St",               "float-term", NULL,                 0,            1,            0,           0,        -1 },
+	{ "St",               "float-term", NULL,                 0,            1,            1,           0,        -1 },
 };
 
 /* layout(s) */
