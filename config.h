@@ -9,10 +9,10 @@ static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "mono:pixelsize=13:antialias=true:autohint=true";
 static char dmenufont[]       = "mono:pixelsize=13:antialias=true:autohint=true";
 static const char *fonts[]          = {
-  font,
-  "Symbols Nerd Font:pixelsize=14:antialias=true:autohint=true",
-  "Noto Color Emoji:pixelsize=12:antialias=true:autohint=true",
-  "Noto Sans CJK JP:pixelsize=13:antialias=true:autohint=true",
+      font,
+      "Symbols Nerd Font:pixelsize=10:antialias=true:autohint=true",
+      "Noto Color Emoji:pixelsize=10:antialias=true:autohint=true",
+      "Noto Sans CJK JP:pixelsize=13:antialias=true:autohint=true",
 };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -21,9 +21,9 @@ static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3]      = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+    /*               fg           bg           border   */
+    [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+    [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -38,9 +38,9 @@ static const Rule rules[] = {
 	{ "Gimp",             NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
 	{ "krita",            NULL,         NULL,                 1 << 3,       0,            0,           1,        -1 },
 	{ "kdenlive",         NULL,         NULL,                 1 << 4,       0,            0,           1,        -1 },
-  { "Mullvad Browser",  NULL,         NULL,                 1 << 2,       0,            0,           0,        -1 },
+    { "Mullvad Browser",  NULL,         NULL,                 1 << 2,       0,            0,           0,        -1 },
 	{ "firefox",          NULL,         NULL,                 1 << 1,       0,            0,           0,        -1 },
-	{ NULL,               NULL,         "Event Tester",       0,            0,            0,           1,        -1 }, /* xev */
+	{ NULL,               NULL,         "Event Tester",       0,            1,            0,           1,        -1 }, /* xev */
 	{ "St",               NULL,         NULL,                 0,            0,            1,           0,        -1 },
 	{ "St",               "float-term", NULL,                 0,            1,            1,           0,        -1 },
 };
@@ -86,12 +86,12 @@ ResourcePref resources[] = {
 	{ "selbordercolor",     STRING,  &selbordercolor },
 	{ "selfgcolor",         STRING,  &selfgcolor },
 	{ "borderpx",          	INTEGER, &borderpx },
-	{ "snap",          		  INTEGER, &snap },
+	{ "snap",          		INTEGER, &snap },
 	{ "showbar",          	INTEGER, &showbar },
-	{ "topbar",          	  INTEGER, &topbar },
+	{ "topbar",          	INTEGER, &topbar },
 	{ "nmaster",          	INTEGER, &nmaster },
 	{ "resizehints",       	INTEGER, &resizehints },
-	{ "mfact",      	 	    FLOAT,   &mfact },
+	{ "mfact",      	 	FLOAT,   &mfact },
 };
 
 static const Key keys[] = {
@@ -112,7 +112,7 @@ static const Key keys[] = {
 	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	// { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating,    {0} },
+	{ MODKEY|Mod1Mask,              XK_f,      togglefloating,    {0} },
 	{ MODKEY,                       XK_f,      togglefullscreen,  {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefakefullscreen, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -121,7 +121,13 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  /*adjust number to dvorak for programmer keyboard layout*/
+    /* movevhrow */
+    { MODKEY|ShiftMask,             XK_Up,     movethrow,      {.ui = DIR_N  }},
+    { MODKEY|ShiftMask,             XK_Down,   movethrow,      {.ui = DIR_S  }},
+    { MODKEY|ShiftMask,             XK_Left,   movethrow,      {.ui = DIR_W  }},
+    { MODKEY|ShiftMask,             XK_Right,  movethrow,      {.ui = DIR_E  }},
+    { MODKEY|ShiftMask,             XK_m,      movethrow,      {.ui = DIR_C  }},
+    /* adjust number to dvorak for programmer keyboard layout */
 	TAGKEYS(                        XK_ampersand,          0)
 	TAGKEYS(                        XK_bracketleft,        1)
 	TAGKEYS(                        XK_braceleft,          2)
