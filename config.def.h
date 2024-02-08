@@ -6,6 +6,7 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
+static const int focusonwheel = 0;
 static char font[]            = "mono:pixelsize=13:antialias=true:autohint=true";
 static char dmenufont[]       = "mono:pixelsize=13:antialias=true:autohint=true";
 static const char *fonts[]          = {

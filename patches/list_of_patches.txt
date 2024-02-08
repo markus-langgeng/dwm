@@ -1,5 +1,0 @@
-dynamic-swallow
-zoomswap
-stacker
-xresources
-fullgaps
