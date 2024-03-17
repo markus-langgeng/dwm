@@ -13,7 +13,7 @@ static const char *fonts[]          = {
       font,
       "Symbols Nerd Font:pixelsize=10:antialias=true:autohint=true",
       "Noto Color Emoji:pixelsize=10:antialias=true:autohint=true",
-      "Noto Sans CJK JP:pixelsize=13:antialias=true:autohint=true",
+      "Noto Sans Mono CJK SC:pixelsize=13:antialias=true:autohint=true",
 };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
